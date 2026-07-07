@@ -61,7 +61,7 @@ export const Route = createFileRoute("/recipe/$slug")({
 });
 
 function RecipeDetail() {
-  const { recipe } = Route.useLoaderData();
+  const { recipe } = Route.useLoaderData() as { recipe: Recipe };
   const [servings, setServings] = useState(recipe.servings);
   const [cookMode, setCookMode] = useState(false);
   const [user, setUser] = useState<{ id: string; email?: string } | null>(null);
